@@ -3,48 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - TravelBloom</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      color: #0f172a;
-    }
-    nav {
-      background-color: #0f172a;
-      padding: 1rem 2rem;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    main {
-      max-width: 850px;
-      margin: 2.5rem auto;
-      padding: 0 1.5rem;
-    }
-  </style>
+  <!-- EDITABLE: Change the browser tab title below -->
+  <title>TravelBloom - Travel Recommendation Website</title>
+  <!-- Links to style.css in the same folder -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- =========================================================
+       NAVIGATION BAR WITH ALL 6 REQUIRED ELEMENTS:
+       1. Home
+       2. About Us
+       3. Contact Us
+       4. Search bar input box (#searchInput)
+       5. Search button (#btnSearch)
+       6. Clear button (#btnClear)
+       ========================================================= -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
+    <!-- EDITABLE: Brand / website name -->
+    <div class="brand">TravelBloom</div>
+
+    <!-- Elements 1, 2, and 3 -->
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- Elements 4, 5, and 6 -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search beach, temple, or country"
+      />
+      <button type="button" id="btnSearch">Search</button>
+      <button type="button" id="btnClear">Clear</button>
+    </div>
   </nav>
 
+  <!-- =========================================================
+       MAIN HOME PAGE CONTENT & SEARCH RESULTS AREA
+       ========================================================= -->
   <main>
-    <h1>Welcome to TravelBloom</h1>
+    <!-- EDITABLE: Main heading and website introduction -->
+    <h1>Explore Dream Destinations</h1>
     <p>
-      Welcome to our website! TravelBloom helps travelers discover inspiring
-      destinations, scenic beaches, historic temples, and memorable countries
-      around the world. Use the navigation menu above to explore our Home,
-      About Us, and Contact Us pages.
+      Welcome to TravelBloom! Our platform helps you discover unforgettable
+      travel destinations around the world. Type <strong>beach</strong>,
+      <strong>temple</strong>, or <strong>country</strong> in the search bar above
+      and click <strong>Search</strong> to explore recommendations with photos.
     </p>
+
+    <!-- Search result cards appear inside this div -->
+    <div id="results"></div>
   </main>
+
+  <script>
+    /* =========================================================
+       EDITABLE DESTINATION DATA
+       You can edit names, image URLs, and descriptions below.
+       Keep at least 2 items in beaches, temples, and countries.
+       ========================================================= */
+    const travelData = {
+      beaches: [
+        {
+          name: "Bora Bora Beach, French Polynesia",
+          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+          description: "Crystal-clear turquoise lagoon, soft white sand, and calm tropical waters."
+        },
+        {
+          name: "Whitehaven Beach, Australia",
+          image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80",
+          description: "Famous for bright silica sand and sweeping turquoise views in the Whitsundays."
+        },
+        {
+          name: "Navagio Beach, Greece",
+          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+          description: "Dramatic cliffs framing a scenic cove with vivid blue waters."
+        }
+      ],
+
+      temples: [
+        {
+          name: "Angkor Wat, Cambodia",
+          image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+          description: "Historic temple complex renowned for its iconic stone towers and architecture."
+        },
+        {
+          name: "Kinkaku-ji (Golden Pavilion), Japan",
+          image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80",
+          description: "Zen temple in Kyoto with gold-leaf upper floors overlooking a peaceful pond."
+        }
+      ],
+
+      countries: [
+        {
+          name: "Japan",
+          image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
+          description: "Offers historic landmarks, seasonal scenery, modern cities, and Mount Fuji views."
+        },
+        {
+          name: "Italy",
+          image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+          description: "Known for ancient monuments, art, coastal towns, and regional cuisine."
+        }
+      ]
+    };
+
+    // Grab elements from the page
+    const searchInput = document.getElementById("searchInput");
+    const btnSearch = document.getElementById("btnSearch");
+    const btnClear = document.getElementById("btnClear");
+    const resultsContainer = document.getElementById("results");
+
+    // Renders destination cards onto the page
+    function renderCards(items) {
+      resultsContainer.innerHTML = items
+        .map(
+          (item) => `
+          <div class="card">
+            <img src="${item.image}" alt="${item.name}" />
+            <div class="card-body">
+              <h3>${item.name}</h3>
+              <p>${item.description}</p>
+            </div>
+          </div>
+        `
+        )
+        .join("");
+    }
+
+    // Handles searching for beach, temple, or country keywords
+    function handleSearch() {
+      const query = searchInput.value.trim().toLowerCase();
+
+      if (!query) {
+        resultsContainer.innerHTML =
+          "<p>Please type a keyword such as <strong>beach</strong>, <strong>temple</strong>, or <strong>country</strong>.</p>";
+        return;
+      }
+
+      if (query.includes("beach")) {
+        renderCards(travelData.beaches);
+      } else if (query.includes("temple")) {
+        renderCards(travelData.temples);
+      } else if (query.includes("country") || query.includes("countr")) {
+        renderCards(travelData.countries);
+      } else {
+        resultsContainer.innerHTML =
+          `<p>No matches found for "<strong>${searchInput.value}</strong>". Try <strong>beach</strong>, <strong>temple</strong>, or <strong>country</strong>.</p>`;
+      }
+    }
+
+    // Clears the search box and removes displayed cards
+    function handleClear() {
+      searchInput.value = "";
+      resultsContainer.innerHTML = "";
+    }
+
+    // Button & keyboard events
+    btnSearch.addEventListener("click", handleSearch);
+    btnClear.addEventListener("click", handleClear);
+    searchInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        handleSearch();
+      }
+    });
+  </script>
 </body>
 </html>
