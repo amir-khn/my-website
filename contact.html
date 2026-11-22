@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDITABLE: Page title -->
+  <title>Contact Us - TravelBloom</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <!-- EDITABLE: Brand name -->
+    <div class="brand">TravelBloom</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html" class="active">Contact Us</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- EDITABLE: Contact details -->
+    <h1>Contact Us</h1>
+    <p>
+      Have questions, feedback, or destination suggestions? Contact us using the
+      details or form below.
+    </p>
+    <p>
+      <strong>Email:</strong> <!-- EDITABLE --> your-email@example.com<br />
+      <strong>Phone:</strong> <!-- EDITABLE --> +1 (555) 123-4567<br />
+      <strong>Location:</strong> <!-- EDITABLE --> TravelBloom Team
+    </p>
+
+    <hr />
+
+    <!-- EDITABLE: Replace your-email@example.com in action="mailto:..." -->
+    <form
+      action="mailto:your-email@example.com"
+      method="post"
+      enctype="text/plain"
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Write your message here..."
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit">Send Email</button>
+    </form>
+  </main>
+</body>
+</html>
