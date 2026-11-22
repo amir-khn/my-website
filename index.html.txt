@@ -3,23 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - My Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>TravelBloom - Travel Recommendation Website</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: #f8fafc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .search-container input {
+      padding: 0.45rem 0.75rem;
+      border: none;
+      border-radius: 4px;
+      width: 240px;
+    }
+
+    .search-container button {
+      padding: 0.45rem 0.9rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #btnSearch {
+      background-color: #0284c7;
+      color: #ffffff;
+    }
+
+    #btnClear {
+      background-color: #64748b;
+      color: #ffffff;
+    }
+
+    /* Home Page Introduction */
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html" class="active">Home</a>
+  <!-- Navigation Bar with the 6 Required Elements -->
+  <nav>
+    <div class="brand">TravelBloom</div>
+
+    <!-- Elements 1, 2, and 3: Home, About Us, Contact Us -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="contact.html">Contact Us</a>
-    </nav>
-  </header>
+    </div>
 
+    <!-- Elements 4, 5, and 6: Search Input Box, Search Button, and Clear Button -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Enter a destination or keyword"
+      />
+      <button type="button" id="btnSearch">Search</button>
+      <button type="button" id="btnClear">Clear</button>
+    </div>
+  </nav>
+
+  <!-- Main Introduction -->
   <main>
-    <h1>Welcome to Our Website</h1>
+    <h1>Explore Dream Destinations</h1>
     <p>
-      This is the home page and introduction to our website. Here you can learn
-      more about what we do, explore our mission, and get in touch with our team.
+      Welcome to TravelBloom, your personalized travel recommendation guide.
+      Discover breathtaking beaches, historic temples, and vibrant cities around
+      the world tailored to your next adventure.
     </p>
   </main>
 </body>
