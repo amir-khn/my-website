@@ -3,90 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDITABLE: Page title -->
   <title>About Us - TravelBloom</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #0f172a;
-      color: #ffffff;
-      padding: 1rem 2rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .brand {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #38bdf8;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      color: #f8fafc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #38bdf8;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 0 1.5rem;
-      color: #0f172a;
-      line-height: 1.65;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-      color: #0f172a;
-    }
-
-    p {
-      color: #334155;
-      margin-bottom: 1rem;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #cbd5e1;
-      margin: 2rem 0;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      color: #334155;
-    }
-
-    li {
-      margin-bottom: 0.75rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav>
+    <!-- EDITABLE: Brand name -->
     <div class="brand">TravelBloom</div>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -96,41 +19,47 @@
   </nav>
 
   <main>
+    <!-- EDITABLE: Company / project overview -->
     <section>
       <h1>About Us</h1>
       <p>
-        <strong>TravelBloom</strong> is a travel discovery and destination recommendation
-        platform built to help travelers explore notable beaches, historic temples,
-        and diverse countries around the world. Our goal is to make trip planning
-        clear, inspiring, and easy to browse.
+        <strong>TravelBloom</strong> is a travel recommendation website created to
+        help users explore inspiring destinations, including scenic beaches,
+        historic temples, and notable countries around the world.
+      </p>
+      <p>
+        Our mission is to make discovering new places simple, visual, and
+        helpful for travelers planning their next trip.
       </p>
     </section>
 
     <hr />
 
+    <!-- EDITABLE: Guidance and instructions for team members -->
     <section>
       <h2>Guidance &amp; Instructions for Team Members</h2>
       <p>
-        Every contributor and team member working on this project should follow these
-        standard practices:
+        Team members contributing to this project should follow these guidelines:
       </p>
       <ul>
         <li>
-          <strong>Keep File Names &amp; Links Consistent:</strong> Use lowercase filenames
-          (<code>index.html</code>, <code>about.html</code>, <code>contact.html</code>)
-          at the repository root so relative links work reliably on GitHub Pages.
+          <strong>Use Consistent File Names:</strong> Keep filenames lowercase
+          (<code>index.html</code>, <code>about.html</code>, <code>contact.html</code>,
+          and <code>style.css</code>) in the root folder.
         </li>
         <li>
-          <strong>Commit Clearly &amp; Test Before Publishing:</strong> Write clear commit
-          messages and verify pages in a browser after GitHub Pages finishes deploying.
+          <strong>Check Links &amp; Images:</strong> Confirm that navigation links
+          work across pages and every destination card includes a working image URL
+          and alt text.
         </li>
         <li>
-          <strong>Maintain Clean, Readable Markup:</strong> Keep HTML tags properly closed,
-          use descriptive <code>alt</code> text on images, and test interactive buttons.
+          <strong>Test Features Before Submitting:</strong> Test the Search and
+          Clear buttons with keywords like <code>beach</code>, <code>temple</code>,
+          and <code>country</code>, and verify the live GitHub Pages site.
         </li>
         <li>
-          <strong>Coordinate Updates:</strong> Share major layout, data, or navigation
-          changes with the team so all pages stay in sync.
+          <strong>Document Changes Clearly:</strong> Use clear commit messages when
+          updating files in GitHub.
         </li>
       </ul>
     </section>
